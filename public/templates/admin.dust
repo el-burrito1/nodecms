@@ -1,0 +1,7 @@
+{>"layouts/newPost" /}
+
+{<body}
+    <div class='form-group'>
+            <input class="form-control" id="postTitle" placeholder="Enter post title">
+    </div>
+{/body}

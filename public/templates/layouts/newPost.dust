@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>{+title /}</title>
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class='form-group'>
+        <form id='newPost'>
+            <label for="postTitle">Title</label>
+                 <input id='test' name='title' class="form-control" placeholder="Enter post title">
+            <label for="postDescription">Description</label>
+                <input name='description' class="form-control" placeholder="Enter description">
+            <label for="postVideo">Video</label>
+                <input name='video' class="form-control" placeholder="Enter embed link">
+            <label for="postTags">Tags</label>
+                <input name='tags' class="form-control" placeholder="Enter tags">
+            <label for="postTags">Date</label>
+                <input name='date' class="form-control" placeholder="Enter date">
+                <button type='submit'>Submit Post</button>
+        </form>
+    </div>
+<script data-main="js/app" src="components/requirejs/require.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src='/js/main.js'></script>
+</body>
+</html>
+
+<!-- {+body /} -->
