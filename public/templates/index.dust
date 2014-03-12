@@ -27,6 +27,12 @@
 
 
     	<div class='col-md-6 contentBar'>
-    	{title}
+    	{#docs}
+    		<h1>{title}</h1>
+	    		<p>{description}</p>
+	    		<iframe src={vimeoLink}></iframe>
+	    		<p>tags: {tags}</p>
+	    		<p>posted on: {date}</p>
+    	{/docs}
     	</div>
 {/body}

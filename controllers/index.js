@@ -6,12 +6,14 @@ var IndexModel = require('../models/index');
 
 module.exports = function (app) {
 
-    var model = new IndexModel();
+    // var model = new IndexModel();
 
 
     app.get('/', function (req, res) {
-        
-        res.render('index', model);
+    	IndexModel.find({},function(err,docs){
+	        console.log(docs)
+	        res.render('index', {docs:docs});
+    	})
         
     });
 
