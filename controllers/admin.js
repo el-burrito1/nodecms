@@ -12,25 +12,25 @@ module.exports = function (app) {
     })
 
     app.post('/createPost' , function (req,res){
-    	console.log(req.body.post)
+    	console.log(req.body)
+    	console.log(req.body.postTags);
+    	var allTags = req.body.postTags.split(',');
+    	console.log(allTags);
+    	console.log(Date.now())
+
+
     	var post = new postModel({
-    		title:req.body.post
-    		// description: req.body.description,
-    		// vimeoLink: req.body.video,
-    		// tags: req.body.tags,
-    		// date: req.body.date
+    		title:req.body.title,
+    		description: req.body.postDescription,
+    		vimeoLink: req.body.postVideo,
+    		tags: allTags,
+    		date: Date.now()
     	});
 
     	post.save(function(err,doc){
     		res.send(doc)
     		console.log(err)
-    	})
+    	});
 
-    // res.send('hello')
-
-    	// newPost.save(function(){
-    	// 	res.redirect('/admin')
-    	// })
-
-    })
+    });
 };

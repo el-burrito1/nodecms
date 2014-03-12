@@ -4,10 +4,12 @@ $(document).on('ready', function(){
 	$('#newPost').on('submit', function(e){
 		e.preventDefault();
 
+		console.log($(this).serialize());
+
 		$.ajax({
 		  type: "POST",
 		  url: '/createPost',
-		  data: {post: $('#test').val()},
+		  data: $('#newPost').serialize(),
 		  crossDomain: true,
 		  dataType:'json',
 		  success: function(data){
@@ -15,17 +17,7 @@ $(document).on('ready', function(){
 		  }	
 		});
 
-		console.log($('#test').val())
-
-		// $.ajax({
-		// 	type:'GET',
-		// 	url: '/test',
-		// 	success: function(data){
-		// 		console.log(data)
-		// 	}
-		// })
-
-	})
+	});
 
 
 
