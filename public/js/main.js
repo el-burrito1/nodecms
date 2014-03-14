@@ -4,6 +4,7 @@ $(document).on('ready', function(){
 	$('#newPost').on('submit', function(e){
 		e.preventDefault();
 
+
 		console.log($(this).serialize());
 
 		$.ajax({
@@ -16,6 +17,9 @@ $(document).on('ready', function(){
 		  	console.log(data)
 		  }	
 		});
+
+		$(this)[0].reset()
+		
 
 	});
 

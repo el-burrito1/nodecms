@@ -1,38 +1,109 @@
 {>"layouts/master" /}
-
 {<body}
-    <div class='col-md-1'></div>
-		<div class='col-md-6 navBar'>
-			<ul class="list-inline linkClass">
-				<li>Shop</li>
-				<li>Contact</li>
-				<li>About</li>
-			</ul>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	    <a class="navbar-brand" href="#">talasurf</a>
+</div>
+
+<div class='feedContainer'></div>
+
+<div class='contentContainer'>
+<div class='masonry'>
+
+		{#docs}
+    	<div class="{?feature}feature {:else} product {/feature}">
+    	<div class="mediaContainer">
+	    	<div class="media">
+	    		{?feature}
+	    		<iframe src='{mediaLink}' width="520" height="292" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	    		{:else}
+	    		<img class='productResize' src='{imageSource}'>
+	    		{/feature}
+	    	</div>
+	    	<div class='title'>{title}</div>
+	    	<div class='description'>{description}</div>
     	</div>
-
-    	<div class='form-group'>
-    		<form class='form-inline'>
-    			<input type='text' value='Check the surf...' class='form-control header'>
-    			<button type='submit' class='btn bt-default header searchButton'>Search</button>
-    		</form>
     	</div>
-
-    <div class='col-md-1'></div>
-        <div class='col-md-6 coolBar'>
-            <h1 id='testTitle'></h1>
-        </div>
-
-    <div class='col-md-12'></div>
-    <div class='col-md-1'></div>
-
-
-    	<div class='col-md-6 contentBar'>
-    	{#docs}
-    		<h1>{title}</h1>
-	    		<p>{description}</p>
-	    		<iframe src={vimeoLink}></iframe>
-	    		<p>tags: {tags}</p>
-	    		<p>posted on: {date}</p>
     	{/docs}
+
+    	<div class="feature">
+    	<div class="mediaContainer">
+	    	<div class="media">
+	    		<iframe src="//player.vimeo.com/video/81910069?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" width="520" height="292" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+	    	</div>
+	    	<div class='title'>Alana Blanchard</div>
+	    	<div class='description'>This is a video description</div>
     	</div>
+    	</div>
+
+    	<div class="feature">
+    	<div class="mediaContainer">
+	    	<div class="media">
+	    		<iframe src="//player.vimeo.com/video/63836620?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" width="520" height="292" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+	    	</div>
+	    	<div class='title'>CALIFORNIA: Stay or Go</div>
+	    	<div class='description'>This is a video description</div>
+    	</div>
+    	</div>
+
+    	<div class='product'>
+    	<div class='mediaContainer'>
+	    	<div class='media'>
+	    		<img class='productResize' src='http://2.hiexistence.com/wp-content/uploads/2014/03/2014-02-27-23.10.17-300x340.jpg'>
+	    	</div>
+    	</div>
+    	</div>
+
+    	<div class='product'>
+    	<div class='mediaContainer'>
+	    	<div class='media'>
+	    		<img class='productResize' src='http://www.ryot.org/wp-content/uploads/2013/02/bob-marley-guitar.jpg'>
+	    	</div>
+    	</div>
+    	</div>	
+
+    	<div class="feature">
+    	<div class="mediaContainer">
+	    	<div class="media">
+	    		<iframe src="//player.vimeo.com/video/24621766?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" width="520" height="292" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	    	<div class='title'>NIKE The Chosen Night Surf</div>
+	    	<div class='description'>This is a video description</div>
+    	</div>
+    	</div>
+    	</div>
+
+    	<div class='product'>
+    	<div class='mediaContainer'>
+	    	<div class='media'>
+	    		<img class='productResize' src='http://ppcdn.500px.org/12730445/847cf7cfd4e28e440732060101e436c975f12729/5.jpg'>
+	    	</div>
+    	</div>
+    	</div>	
+</div>
+</div>
+
+
 {/body}
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   <div class='col-md-1'>Hello</div>
+
+  <div class="mediaContainer">
+	  	<div class='col-md-6 content'>
+	  		<iframe src="//player.vimeo.com/video/35489152" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	  	</div>
+
+	  	<div class='col-md-6 content'>
+	  		<iframe src="//player.vimeo.com/video/81910069" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	  	</div>
+  </div> -->

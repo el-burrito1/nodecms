@@ -3,13 +3,19 @@
 var postModel = require('../models/index');
 
 module.exports = function (app) {
-    app.get('/admin', function (req, res) {
+
+    function ensureAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) { return next(); }
+    res.redirect('/login')
+    };
+
+    app.get('/admin', ensureAuthenticated, function (req, res) {
         res.render('admin')
     });
 
     app.get('/test', function (req,res){
     	res.send('test')
-    })
+    });
 
     app.post('/createPost' , function (req,res){
     	console.log(req.body)
@@ -22,9 +28,11 @@ module.exports = function (app) {
     	var post = new postModel({
     		title:req.body.title,
     		description: req.body.postDescription,
-    		vimeoLink: req.body.postVideo,
+    		mediaLink: req.body.postVideo,
     		tags: allTags,
-    		date: Date.now()
+    		date: Date.now(),
+            feature: req.body.button === 'feature',
+            imageSource: req.body.imageSource
     	});
 
     	post.save(function(err,doc){
@@ -34,3 +42,4 @@ module.exports = function (app) {
 
     });
 };
+

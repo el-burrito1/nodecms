@@ -1,0 +1,40 @@
+{>"layouts/master" /}
+
+{<body}
+<div class='testContainer'>
+    <div class='col-md-1'></div>
+		<div class='col-md-6 navBar'>
+			<ul class="list-inline linkClass">
+				<li>Shop</li>
+				<li>Contact</li>
+				<li>About</li>
+			</ul>
+    	</div>
+
+    	<div class='form-group'>
+    		<form class='form-inline' id='checkSurf'>
+    			<input type='text' value='Check the surf...' class='form-control header'>
+    			<button type='submit' class='btn bt-default header searchButton'>Search</button>
+    		</form>
+    	</div>
+
+    <div class='col-md-1'></div>
+        <!-- <div class='col-md-6 coolBar'> -->
+            <h1 id='testTitle'></h1>
+        </div>
+ </div>
+
+    <div class='col-md-5' id='reportField'>Test</div>
+    <div class='col-md-1'></div>
+
+
+    	<div class='col-md-6 contentBar'>
+    	{#docs}
+    		<h1>{title}</h1>
+	    		<p>{description}</p>
+	    		<iframe src={vimeoLink}></iframe>
+	    		<p>tags: {tags}</p>
+	    		<p>posted on: {date}</p>
+    	{/docs}
+    	</div>
+{/body}

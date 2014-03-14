@@ -7,21 +7,28 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 </head>
 <body>
+<div class='container'>
+    <h1>Welcome back, Spencer!</h1>
     <div class='form-group'>
         <form id='newPost'>
-            <label for="postTitle">Title</label>
-                 <input id='postTitle' name='title' class="form-control" placeholder="Enter post title" value='New Video from Dane Reynolds'>
-            <label for="postDescription">Description</label>
-                <input name='postDescription' class="form-control" placeholder="Enter description" value='new video called pleasure point'>
-            <label for="postVideo">Video</label>
-                <input name='postVideo' class="form-control" placeholder="Enter embed link" value='http://player.vimeo.com/video/83279905?autoplay=0&amp;api=1'>
+            <label for="postTitle">Headline</label>
+                 <input id='postTitle' name='title' class="form-control" placeholder="Headline...">
+            <label for="postDescription">Add some description</label>
+                <input name='postDescription' class="form-control" placeholder="description...">
+            <label for="postVideo">Video URL code</label>
+                <input name='postVideo' class="form-control" placeholder="Add the embed code here...">
+            <label for="imageSource">Image URL source</label>
+                <input name='imageSource' class='form-control' placeholder="Include image URL code...">
             <label for="postTags">Tags</label>
-                <input name='postTags' class="form-control" value="Dane Reynolds, Loaded, Marine Layer Productions">
-            <label for="postDate">Date</label>
-                <input name='postDate' class="form-control" value="Timestamp">
-                <button type='submit'>Submit Post</button>
+                <input name='postTags' class="form-control" placeholder="Enter tags"><br>
+            <label for="feature">Feature (video)? </label>
+                <input type='radio' id='feature' name='button' value='feature'><br>
+            <label for="product">Product (image)? </label>
+                <input type='radio' id='product' name='button' value='product'><br><br>
+                <button class='btn' type='submit'>Submit Post</button>
         </form>
     </div>
+</div>
 <script data-main="js/app" src="components/requirejs/require.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
