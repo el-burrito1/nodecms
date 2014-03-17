@@ -23,12 +23,15 @@ module.exports = function (app) {
     	var allTags = req.body.postTags.split(',');
     	console.log(allTags);
     	console.log(Date.now())
+        console.log(req.body.videoSource)
+        var videoGold = (req.body.videoSource).slice(17);
+        console.log(videoGold)
 
 
     	var post = new postModel({
     		title:req.body.title,
     		description: req.body.postDescription,
-    		mediaLink: req.body.postVideo,
+    		videoSource: videoGold,
     		tags: allTags,
     		date: Date.now(),
             feature: req.body.button === 'feature',

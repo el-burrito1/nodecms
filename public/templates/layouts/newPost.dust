@@ -14,19 +14,25 @@
             <label for="postTitle">Headline</label>
                  <input id='postTitle' name='title' class="form-control" placeholder="Headline...">
             <label for="postDescription">Add some description</label>
-                <input name='postDescription' class="form-control" placeholder="description...">
-            <label for="postVideo">Video URL code</label>
-                <input name='postVideo' class="form-control" placeholder="Add the embed code here...">
-            <label for="imageSource">Image URL source</label>
-                <input name='imageSource' class='form-control' placeholder="Include image URL code...">
+                <input name='postDescription' class="form-control" placeholder="Description...">
+          
             <label for="postTags">Tags</label>
                 <input name='postTags' class="form-control" placeholder="Enter tags"><br>
-            <label for="feature">Feature (video)? </label>
+
+            <label for="feature">Video</label>
                 <input type='radio' id='feature' name='button' value='feature'><br>
-            <label for="product">Product (image)? </label>
-                <input type='radio' id='product' name='button' value='product'><br><br>
+                        <input id='videoCode' name='videoSource' class="form-control inputField" placeholder="Add the embed code here..."><br>
+
+            <label for="product">Image</label>
+                <input type='radio' id='product' name='button' value='product'><br>
+                    <input id='imageCode' name='imageSource' class='form-control inputField' placeholder="Include image URL code..."><br>
+
                 <button class='btn' type='submit'>Submit Post</button>
         </form>
+
+        <br><br>
+
+        <a href='http://localhost:8000/' id='homeButton' class='btn returnBtn'>Return Home</a>
     </div>
 </div>
 <script data-main="js/app" src="components/requirejs/require.js"></script>

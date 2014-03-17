@@ -1,14 +1,18 @@
 $(document).on('ready',function(){
-	console.log('test')
 
-	$('#checkSurf').on('submit',function(e){
-		e.preventDefault();
+  $('#surfForm').on('submit' , function(e){
+  	e.preventDefault();
+  	console.log('test');
 
-		$('#reportField').empty();
-		$('#reportField').html('test');
+	  	$.ajax({
+	  		type:'GET',
+	  		url:'/findSurf',
+	  		success: function(data){
+	  			console.log(data)
+	  		}
+	  	})
 
-		
-	})
+  	})
 
   var container = $('.masonry').get(0);
   var msnry = new Masonry( container, {
