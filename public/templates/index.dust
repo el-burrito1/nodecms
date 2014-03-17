@@ -8,10 +8,15 @@
 <div class='reportContainer'>
 <form class="form-inline surfForm" id='surfForm' role="form">
 	  <div class="form-group">
-	    <input class="form-control beachForm" id="beachSearch" placeholder="Enter CA beach">
+	    <input name='beach' class="form-control beachForm" id="beachSearch" placeholder="Enter CA beach">
 	  </div>
 	   <button type="submit" class="btn btn-default surfCheckbtn">Check Surf</button>
+
+	<p class='surfReport'></p>
+
 </form>
+
+
 </div>
 
 <div class='bumperContainer'></div>
