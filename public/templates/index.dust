@@ -10,7 +10,7 @@
 	  <div class="form-group">
 	    <input name='beach' class="form-control beachForm" id="beachSearch" placeholder="Enter CA beach">
 	  </div>
-	   <button type="submit" class="btn btn-default surfCheckbtn">Check Surf</button>
+	   <button type="submit" class="btn btn-default surfCheckbtn" id='findButton'><i id='coolIcon'></i>Check Surf</button>
 
 	<p class='surfReport'></p>
 
@@ -19,7 +19,168 @@
 
 </div>
 
-<div class='bumperContainer'></div>
+<div class='bumperContainer'>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Current Beaches</h4>
+      </div>
+      <div class="modal-body">
+        		<span><b>San Diego</b></span>
+        			<ul class='list-inline'>
+        				<li>Oceanside Harbor</li>
+        				<li>Oceanside Pier</li>
+        				<li>Wisconsin</li>
+        				<li>Cassidy</li>
+        				<li>Tamarack</li>
+        				<li>Warm Water Jetty</li>
+        				<li>Terra Mar</li>
+        				<li>Campground</li>
+        				<li>Ponto</li>
+        				<li>Grandview</li>
+        				<li>Beacons</li>
+        				<li>D Street</li>
+        				<li>Swamis</li>
+        				<li>Cardiff Reef</li>
+        				<li>15th Street - Del Mar</li>
+        				<li>Blacks Beach</li>
+        				<li>Scripps Pear</li>
+        				<li>Windansea</li>
+        				<li>Bird Rock</li>
+        				<li>Tourmaline</li>
+        				<li>Pacific Beach</li>
+        				<li>Mission Beach</li>
+        				<li>Ocean Beach Pier</li>
+        				<li>Sunset Cliffs</li>
+        				<li>Imperial Beach</li>
+        			</ul>
+        		<span><b>Orange County</b></span>
+        			<ul class='list-inline'>
+        				<li>Seal Beach Pier</li>
+        				<li>Surfside Jetty</li>
+        				<li>Anderson St</li>
+        				<li>Bolsa Chica</li>
+        				<li>Goldenwest</li>
+        				<li>17th Street</li>
+        				<li>Huntington Pier</li>
+        				<li>Huntington Beach</li>
+        				<li>56th Street</li>
+        				<li>40th Street</li>
+        				<li>36th Street</li>
+        				<li>Blackies</li>
+        				<li>Newport Pier</li>
+        				<li>The Wedge</li>
+        				<li>Salt Creek</li>
+        				<li>Doheny</li>
+        				<li>San Clemente Pier</li>
+        				<li>T Street</li>
+        				<li>Lasuen</li>
+        				<li>Riviera</li>
+        				<li>Calafia</li>
+        				<li>State Park</li>
+        				<li>North Gate</li>
+        				<li>Cottons Point</li>
+        				<li>Upper Trestles</li>
+        				<li>Lower Trestles</li>
+        				<li>Church</li>
+        				<li>San Onofre</li>
+        			</ul>
+        		<span><b>Los Angeles</b></span>
+        			<ul class='list-inline'>
+        				<li>County Line</li>
+        				<li>Zuma Beach</li>
+        				<li>Malibu</li>
+        				<li>Topanga</li>
+        				<li>Venice</li>
+        				<li>El Porto</li>
+        				<li>Manhattan Beach</li>
+        				<li>Hermosa</li>
+        				<li>Torrance Beach</li>
+        			</ul>
+        		<span><b>Ventura</b></span>
+        			<ul class='list-inline'>
+        				<li>Mondos</li>
+        				<li>Emma Wood</li>
+        				<li>C Street</li>
+        			</ul>
+        		<span><b>Santa Barbara</b></span>
+        			<ul class='list-inline'>
+        				<li>Jalama</li>
+        				<li>Sands</li>
+        				<li>Devereux</li>
+        				<li>Campus Point</li>
+        				<li>Leadbetter</li>
+        				<li>Rincon</li>
+        			</ul>
+        		<span><b>San Luis Obispo</b></span>
+        			<ul class='list-inline'>
+        				<li>Morro Rock</li>
+        				<li>Pismo Beach Pier</li>
+        			</ul>
+        		<span><b>Monterey</b></span>
+        			<ul class='list-inline'>
+        				<li>Moss State Landing Beach</li>
+        				<li>Carmel Beach</li>
+        			</ul>
+        		<span><b>Santa Cruz</b></span>
+        			<ul class='list-inline'>
+        				<li>County Line</li>
+        				<li>Waddell Creek</li>
+        				<li>Waddell Reefs</li>
+        				<li>Scotts Creek</li>
+        				<li>Davenport Landing</li>
+        				<li>Four Mile</li>
+        				<li>Three Mile</li>
+        				<li>Natural Bridges</li>
+        				<li>Stockton Avenue</li>
+        				<li>Swift Street</li>
+        				<li>Getchell</li>
+        				<li>Mitchells Cover</li>
+        				<li>Steamer Lane</li>
+        				<li>Cowells</li>
+        				<li>The Rivermouth</li>
+        				<li>Blacks</li>
+        				<li>Santa Marias</li>
+        				<li>26th Avenue</li>
+        				<li>Little Windansea</li>
+        				<li>Rockview</li>
+        				<li>Sewer Peak</li>
+        				<li>Pleasure Point</li>
+        				<li>38th Avenue</li>
+        				<li>The Hook</li>
+        				<li>Sharks Cove</li>
+        				<li>Capitola Jetties</li>
+        				<li>Manresa</li>
+        			</ul>
+        		<span><b>San Mateo</b></span>
+        			<ul class='list-inline'>
+        				<li>Linda Mar</li>
+        				<li>Montara</li>
+        				<li>Mavericks</li>
+        				<li>Princeton Jetty</li>
+        				<li>Pomponio State Beach</li>
+        				<li>Ano Nuevo</li>
+        			</ul>
+        		<span><b>San Francisco</b></span>
+        			<ul class='list-inline'>
+        				<li>Fort Point</li>
+        				<li>Eagles Point</li>
+        				<li>Deadmans</li>
+        				<li>Kellys Cove</li>
+        				<li>North Ocean Beach</li>
+        				<li>South Ocean Beach</li>
+        			</ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
 
 <div class='contentContainer'>
 <div class='masonry'>
@@ -40,59 +201,6 @@
     	</div>
     	{/docs}
 
-    	<div class="feature">
-    	<div class="mediaContainer">
-	    	<div class="media">
-	    		<iframe src="//player.vimeo.com/video/81910069?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" width="520" height="292" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
-	    	</div>
-	    	<div class='title'>Alana Blanchard</div>
-	    	<div class='description'>This is a video description</div>
-    	</div>
-    	</div>
-
-    	<div class="feature">
-    	<div class="mediaContainer">
-	    	<div class="media">
-	    		<iframe src="//player.vimeo.com/video/63836620?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" width="520" height="292" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
-	    	</div>
-	    	<div class='title'>CALIFORNIA: Stay or Go</div>
-	    	<div class='description'>This is a video description</div>
-    	</div>
-    	</div>
-
-    	<div class='product'>
-    	<div class='mediaContainer'>
-	    	<div class='media'>
-	    		<img class='productResize' src='http://2.hiexistence.com/wp-content/uploads/2014/03/2014-02-27-23.10.17-300x340.jpg'>
-	    	</div>
-    	</div>
-    	</div>
-
-    	<div class='product'>
-    	<div class='mediaContainer'>
-	    	<div class='media'>
-	    		<img class='productResize' src='http://www.ryot.org/wp-content/uploads/2013/02/bob-marley-guitar.jpg'>
-	    	</div>
-    	</div>
-    	</div>	
-
-    	<div class="feature">
-    	<div class="mediaContainer">
-	    	<div class="media">
-	    		<iframe src="//player.vimeo.com/video/24621766?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" width="520" height="292" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-	    	<div class='title'>NIKE The Chosen Night Surf</div>
-	    	<div class='description'>This is a video description</div>
-    	</div>
-    	</div>
-    	</div>
-
-    	<div class='product'>
-    	<div class='mediaContainer'>
-	    	<div class='media'>
-	    		<img class='productResize' src='http://ppcdn.500px.org/12730445/847cf7cfd4e28e440732060101e436c975f12729/5.jpg'>
-	    	</div>
-    	</div>
-    	</div>	
 </div>
 </div>
 

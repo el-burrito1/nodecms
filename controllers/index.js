@@ -8,7 +8,7 @@ var request = require('request')
 module.exports = function (app) {
 
     app.get('/', function (req, res) {
-    	IndexModel.find({},function(err,docs){
+    	IndexModel.find({}).sort('-_id').exec(function(err,docs){
 	        res.render('index', {docs:docs});
     	})
         

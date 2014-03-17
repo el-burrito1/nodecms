@@ -18,15 +18,8 @@ module.exports = function (app) {
     });
 
     app.post('/createPost' , function (req,res){
-    	console.log(req.body)
-    	console.log(req.body.postTags);
     	var allTags = req.body.postTags.split(',');
-    	console.log(allTags);
-    	console.log(Date.now())
-        console.log(req.body.videoSource)
         var videoGold = (req.body.videoSource).slice(17);
-        console.log(videoGold)
-
 
     	var post = new postModel({
     		title:req.body.title,
