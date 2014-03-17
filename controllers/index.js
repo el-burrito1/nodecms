@@ -15,16 +15,21 @@ module.exports = function (app) {
     });
 
     app.post('/findSurf' , function(req,res){
-    	console.log(req.body)
-    	console.log(req.body.beach)
     	var beachSilver = req.body.beach;
     	var beachGold = beachSilver.replace(/\s+/g, '');
-    	console.log(beachGold)
     	request('http://api.spitcast.com/api/spot-forecast/search?spot_name=' + beachGold , function(error,response,body){
     		if(response.statusCode == 200){
-    			   console.log(body)
     		       res.send(body)
     		    }
+    	})
+    })
+
+    app.post('/detailReport' , function(req,res){
+    	console.log(req.body.spot_id);
+    	request('http://api.spitcast.com/api/spot/forecast/' + req.body.spot_id , function(error,response,body){
+    		if(response.statusCode == 200){
+    			res.send(body)
+    		}
     	})
     })
 
