@@ -13,11 +13,11 @@ if(global.process.env.MONGOHQ_URL){
   mongoose.connect('mongodb://localhost/posts');
 }
 
-var bcrypt = require('bcrypt')
-var SALT_WORK_FACTOR = 10;
+// var bcrypt = require('bcrypt')
+// var SALT_WORK_FACTOR = 10;
 
-var passport = require('passport')
-  , LocalStrategy = require('passport-local').Strategy;
+// var passport = require('passport')
+//   , LocalStrategy = require('passport-local').Strategy;
 
 // var userSchema = mongoose.Schema({
 //   username: { type: String, required: true, unique: true },
@@ -26,71 +26,71 @@ var passport = require('passport')
 // });
 
 // Bcrypt middleware
-userSchema.pre('save', function(next) {
-  var user = this;
+// userSchema.pre('save', function(next) {
+//   var user = this;
 
-  if(!user.isModified('password')) return next();
+//   if(!user.isModified('password')) return next();
 
-  bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
-    if(err) return next(err);
+//   bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
+//     if(err) return next(err);
 
-    bcrypt.hash(user.password, salt, function(err, hash) {
-      if(err) return next(err);
-      user.password = hash;
-      next();
-    });
-  });
-});
+//     bcrypt.hash(user.password, salt, function(err, hash) {
+//       if(err) return next(err);
+//       user.password = hash;
+//       next();
+//     });
+//   });
+// });
 
-// Password verification
-userSchema.methods.comparePassword = function(candidatePassword, cb) {
-  bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
-    if(err) return cb(err);
-    cb(null, isMatch);
-  });
-};
+// // Password verification
+// userSchema.methods.comparePassword = function(candidatePassword, cb) {
+//   bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
+//     if(err) return cb(err);
+//     cb(null, isMatch);
+//   });
+// };
 
-// Seed a user
-var User = mongoose.model('User', userSchema);
-var user = new User({ username: 'bob', email: 'bob@example.com', password: 'secret' });
-user.save(function(err) {
-  if(err) {
-    console.log(err);
-  } else {
-    console.log('user: ' + user.username + " saved.");
-  }
-});
-
-
-passport.serializeUser(function(user, done) {
-  done(null, user.id);
-});
-
-passport.deserializeUser(function(id, done) {
-  User.findById(id, function (err, user) {
-    done(err, user);
-  });
-});
+// // Seed a user
+// var User = mongoose.model('User', userSchema);
+// var user = new User({ username: 'bob', email: 'bob@example.com', password: 'secret' });
+// user.save(function(err) {
+//   if(err) {
+//     console.log(err);
+//   } else {
+//     console.log('user: ' + user.username + " saved.");
+//   }
+// });
 
 
+// passport.serializeUser(function(user, done) {
+//   done(null, user.id);
+// });
+
+// passport.deserializeUser(function(id, done) {
+//   User.findById(id, function (err, user) {
+//     done(err, user);
+//   });
+// });
 
 
-passport.use(new LocalStrategy(
-  function(username, password, done) {
-    User.findOne({ username: username }, function(err, user) {
-    if (err) { return done(err); }
-    if (!user) { return done(null, false, { message: 'Unknown user ' + username }); }
-    user.comparePassword(password, function(err, isMatch) {
-      if (err) return done(err);
-      if(isMatch) {
-        return done(null, user);
-      } else {
-        return done(null, false, { message: 'Invalid password' });
-      }
-    });
-  });
-  }
-));
+
+
+// passport.use(new LocalStrategy(
+//   function(username, password, done) {
+//     User.findOne({ username: username }, function(err, user) {
+//     if (err) { return done(err); }
+//     if (!user) { return done(null, false, { message: 'Unknown user ' + username }); }
+//     user.comparePassword(password, function(err, isMatch) {
+//       if (err) return done(err);
+//       if(isMatch) {
+//         return done(null, user);
+//       } else {
+//         return done(null, false, { message: 'Invalid password' });
+//       }
+//     });
+//   });
+//   }
+// ));
 
 
 
