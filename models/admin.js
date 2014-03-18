@@ -113,3 +113,4 @@ app.requestAfterRoute = function requestAfterRoute(server) {
 
 
 module.exports = User;
+module.exports = app;
