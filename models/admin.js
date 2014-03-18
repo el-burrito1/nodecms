@@ -1,5 +1,7 @@
 'use strict';
 
+var app = {};
+
 var bcrypt = require('bcrypt');
 var SALT_WORK_FACTOR = 10;
 
@@ -13,6 +15,8 @@ var userSchema = mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true},
 });
+
+var User = mongoose.model('User', userSchema);
 
 // Bcrypt middleware
 userSchema.pre('save', function(next) {
@@ -108,8 +112,4 @@ app.requestAfterRoute = function requestAfterRoute(server) {
 };
 
 
-
-
-
-
-var User = module.exports = mongoose.model('User', userSchema);
+module.exports = User;
