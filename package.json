@@ -23,7 +23,8 @@
     "makara": "~0.3.0",
     "bcrypt": "~0.7.7",
     "request": "~2.34.0",
-    "mongoose": "~3.8.8"
+    "mongoose": "~3.8.8",
+    "passport": "~0.2.0"
   },
   "devDependencies": {
     "mocha": "~1.17.0",
