@@ -19,11 +19,11 @@ var SALT_WORK_FACTOR = 10;
 var passport = require('passport')
   , LocalStrategy = require('passport-local').Strategy;
 
-var userSchema = mongoose.Schema({
-  username: { type: String, required: true, unique: true },
-  email: { type: String, required: true, unique: true },
-  password: { type: String, required: true},
-});
+// var userSchema = mongoose.Schema({
+//   username: { type: String, required: true, unique: true },
+//   email: { type: String, required: true, unique: true },
+//   password: { type: String, required: true},
+// });
 
 // Bcrypt middleware
 userSchema.pre('save', function(next) {
