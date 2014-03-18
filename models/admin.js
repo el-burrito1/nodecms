@@ -45,16 +45,6 @@ var User = mongoose.model('User', userSchema);
 // Bcrypt middleware
 
 
-// var user = new User({ username: 'bob', email: 'bob@example.com', password: 'secret' });
-// user.save(function(err) {
-//   if(err) {
-//     console.log(err);
-//   } else {
-//     console.log('user: ' + user.username + " saved.");
-//   }
-// });
-
-
 passport.serializeUser(function(user, done) {
   done(null, user.id);
 });
