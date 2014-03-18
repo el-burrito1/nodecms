@@ -16,9 +16,6 @@ var userSchema = mongoose.Schema({
   password: { type: String, required: true},
 });
 
-var User = mongoose.model('User', userSchema);
-
-// Bcrypt middleware
 userSchema.pre('save', function(next) {
   var user = this;
 
@@ -43,6 +40,11 @@ userSchema.methods.comparePassword = function(candidatePassword, cb) {
   });
 };
 
+var User = mongoose.model('User', userSchema);
+
+// Bcrypt middleware
+
+
 var user = new User({ username: 'bob', email: 'bob@example.com', password: 'secret' });
 user.save(function(err) {
   if(err) {
@@ -57,9 +59,6 @@ passport.serializeUser(function(user, done) {
   done(null, user.id);
 });
 
-passport.serializeUser(function(user, done) {
-  done(null, user.id);
-});
 
 passport.deserializeUser(function(id, done) {
   User.findById(id, function (err, user) {
@@ -113,4 +112,3 @@ app.requestAfterRoute = function requestAfterRoute(server) {
 
 
 module.exports = User;
-module.exports = app;

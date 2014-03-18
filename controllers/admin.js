@@ -38,7 +38,7 @@ module.exports = function (app) {
     });
 
     app.post('/newAdmin' , function (req,res){
-        var user = new User({
+        var user = new userModel({
             username: req.body.username,
             email: req.body.email,
             password: req.body.password
