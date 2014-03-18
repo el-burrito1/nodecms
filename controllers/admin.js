@@ -13,9 +13,6 @@ module.exports = function (app) {
         res.render('admin')
     });
 
-    app.get('/test', function (req,res){
-    	res.send('test')
-    });
 
     app.post('/createPost' , function (req,res){
     	var allTags = req.body.postTags.split(',');
