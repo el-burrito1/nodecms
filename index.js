@@ -6,7 +6,12 @@ var kraken = require('kraken-js'),
     app = {};
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/posts');
+
+if(global.process.env.MONGOHQ_URL){
+  mongoose.connect(global.process.env.MONGOHQ_URL);
+}else{
+  mongoose.connect('mongodb://localhost/posts');
+}
 
 var bcrypt = require('bcrypt')
 var SALT_WORK_FACTOR = 10;
