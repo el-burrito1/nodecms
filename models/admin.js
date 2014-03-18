@@ -14,7 +14,7 @@ var userSchema = mongoose.Schema({
   password: { type: String, required: true},
 });
 
-Bcrypt middleware
+// Bcrypt middleware
 userSchema.pre('save', function(next) {
   var user = this;
 
