@@ -15,9 +15,6 @@ $(document).on('ready', function(){
 	$('#newPost').on('submit', function(e){
 		e.preventDefault();
 
-
-		console.log($(this).serialize());
-
 		$.ajax({
 		  type: "POST",
 		  url: '/createPost',
@@ -32,5 +29,23 @@ $(document).on('ready', function(){
 		$(this)[0].reset()
 		
 	});
+
+	$('#newAdmin').on('submit' , function(e){
+		e.preventDefault();
+
+		$.ajax({
+			type:'POST',
+			url: '/newAdmin',
+			data: $('#newAdmin').serialize(),
+			crossDomain: true,
+			dataType: 'json',
+			success: function(data){
+				console.log(data)
+			}
+		});
+
+	})
+
+
 
 })

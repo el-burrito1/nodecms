@@ -34,6 +34,14 @@
 
         <a href='http://localhost:8000/' id='homeButton' class='btn returnBtn'>Return Home</a>
     </div>
+
+        <div class='form-group'>
+            <form id='newAdmin'>
+                 <input id='userName' name='username' class="form-control" placeholder="username">
+                 <input id='passWord' name='password' class="form-control" placeholder="password">
+                    <button class='btn' type='submit'>Create User</button>
+            </form>
+        </div>
 </div>
 <script data-main="js/app" src="components/requirejs/require.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
