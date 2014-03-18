@@ -8,4 +8,4 @@ var userSchema = mongoose.Schema({
   password: { type: String, required: true},
 });
 
-var User = mongoose.model('User', userSchema);
+var User = module.exports = mongoose.model('User', userSchema);
