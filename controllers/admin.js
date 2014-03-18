@@ -2,7 +2,7 @@
 
 var mongoose = require('mongoose');
 var postModel = require('../models/index');
-var User = mongoose.model('User', userSchema);
+var userModel = require('../models/admin')
 
 module.exports = function (app) {
 
@@ -40,6 +40,7 @@ module.exports = function (app) {
     app.post('/newAdmin' , function (req,res){
         var user = new User({
             username: req.body.username,
+            email: req.body.email,
             password: req.body.password
         });
 

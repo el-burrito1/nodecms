@@ -38,6 +38,7 @@
         <div class='form-group'>
             <form id='newAdmin'>
                  <input id='userName' name='username' class="form-control" placeholder="username">
+                 <input id='email' name='email' class="form-control" placeholder="email">
                  <input id='passWord' name='password' class="form-control" placeholder="password">
                     <button class='btn' type='submit'>Create User</button>
             </form>
