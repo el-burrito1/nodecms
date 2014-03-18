@@ -1,5 +1,6 @@
 'use strict';
 
+var mongoose = require('mongoose')
 var postModel = require('../models/index');
 var User = mongoose.model('User', userSchema);
 
