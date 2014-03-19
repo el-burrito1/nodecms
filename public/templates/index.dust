@@ -195,7 +195,7 @@
 	    		<a href='{blogURL}'><img class='productResize' src='{imageSource}'></a>
 	    		{/feature}
 	    	</div>
-	    	<div class='title'>{title}</div>
+	    	<div class='title'><b>{title}</b></div>
 	    	<div class='description'>{description}</div>
     	</div>
     	</div>
