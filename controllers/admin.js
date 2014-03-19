@@ -27,7 +27,8 @@ module.exports = function (app) {
     		tags: allTags,
     		date: Date.now(),
             feature: req.body.button === 'feature',
-            imageSource: req.body.imageSource
+            imageSource: req.body.imageSource,
+            blogURL: req.body.blogURL
     	});
 
     	post.save(function(err,doc){

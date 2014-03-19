@@ -9,7 +9,8 @@ var postSchema = new mongoose.Schema({
 	date: String,
 	tags: [String],
 	feature: Boolean,
-	imageSource: String
+	imageSource: String,
+	blogURL: String
 })
 
 var postModel = module.exports = mongoose.model('post' , postSchema)
