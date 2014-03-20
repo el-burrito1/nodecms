@@ -192,7 +192,7 @@
 	    		{?feature}
 	    		<iframe src='//player.vimeo.com/video/{videoSource}?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933' width="520" height="292" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 	    		{:else}
-	    		<a href='{blogURL}'><img class='productResize' src='{imageSource}'></a>
+	    		<a href='{blogURL}' target='_blank'><img class='productResize' src='{imageSource}'></a>
 	    		{/feature}
 	    	</div>
 	    	<div class='title'><b>{title}</b></div>
