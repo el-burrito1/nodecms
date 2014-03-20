@@ -33,7 +33,9 @@
 
         <br><br>
 
-        <a href='http://www.talasurf.com' id='homeButton' class='btn returnBtn'>Return Home</a>
+        <a href='/' id='homeButton' class='btn returnBtn'>Return Home</a>
+        <a href='/logout' id='homeButton' class='btn'>Logout</a>
+
     </div>
 
 <!--         <div class='form-group'>
