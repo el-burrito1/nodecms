@@ -33,7 +33,7 @@
 
         <br><br>
 
-        <a href='http://localhost:8000/' id='homeButton' class='btn returnBtn'>Return Home</a>
+        <a href='http://www.talasurf.com' id='homeButton' class='btn returnBtn'>Return Home</a>
     </div>
 
 <!--         <div class='form-group'>
