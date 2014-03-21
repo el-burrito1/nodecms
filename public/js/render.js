@@ -57,18 +57,18 @@ $(document).on('ready',function(){
     columnWidth: 200
   });
 
-  var trackOutboundLink = function(url) {
-     ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
-       function () {
-       document.location = url;
-       }
-     });
-  };
+  // var trackOutboundLink = function(url) {
+  //    ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
+  //      function () {
+  //      document.location = url;
+  //      }
+  //    });
+  // };
 
-  $('.outboundLink').on('click' , function(){
-    trackOutboundLink(this.href);
-    return false;
-  })
+  // $('.outboundLink').on('click' , function(){
+  //   trackOutboundLink(this.href);
+  //   return false;
+  // })
 
 
 
